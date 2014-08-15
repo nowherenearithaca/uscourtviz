@@ -872,7 +872,7 @@ var courtListenerData = [
             jurisdiction:'State Appellate',
             stateParent:'N.Y.',
             citation:'N.Y. App. Div.', url:'http://www.courts.state.ny.us/courts/appellatedivisions.shtml',
-            courtListenerURL:'https://www.courtlistener.com/?q=&court_nyappdiv=on&order_by=dateFiled+desc'} 
+            courtListenerURL:'https://www.courtlistener.com/?q=&court_nyappdiv=on&order_by=dateFiled+desc'}
 
 //    {name:'First Department, Appellate Division of the Supreme Court of the State of New York',
 //        stateParent:'N.Y.', jurisdiction:'State Appellate',
