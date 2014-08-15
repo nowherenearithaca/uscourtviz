@@ -3,10 +3,7 @@ Exploring the US Judicial System - a Visualization
 
 This is a work-in-progress html/js visualization of the US Judicial System.
 
-It is currently [on google drive here](https://d57dd304fefca1aa423fea1b4dc59f23c06dd95e.googledrive.com/host/0B2GQktu-wcTiWm82NGt5MTZreHM/).
-
 ![Visualization of US Judicial System](screenshot.png)
-
 
 
 The plan is to eventually incorporate this visualization into the
@@ -15,7 +12,9 @@ The plan is to eventually incorporate this visualization into the
 
 ## Viewing the Visualization
 
-To view this standalone version, simply clone the repository to your machine and then 
+It is currently hosted [on google drive here](https://d57dd304fefca1aa423fea1b4dc59f23c06dd95e.googledrive.com/host/0B2GQktu-wcTiWm82NGt5MTZreHM/).
+
+To view this standalone version locally, simply clone the repository to your machine and then 
 open the file index.html with a
 browser that supports svg.  This includes Chrome, IE9+, Safari, Firefox, and Opera.
 
