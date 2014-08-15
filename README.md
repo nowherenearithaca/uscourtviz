@@ -5,6 +5,10 @@ This is a work-in-progress html/js visualization of the US Judicial System.
 
 It is currently [on google drive here](https://d57dd304fefca1aa423fea1b4dc59f23c06dd95e.googledrive.com/host/0B2GQktu-wcTiWm82NGt5MTZreHM/).
 
+![Visualization of US Judicial System](screenshot.png)
+
+
+
 The plan is to eventually incorporate this visualization into the
 [CourtListener](https://www.courtlistener.com) site as a part of the
 [Free Law Project](http://freelawproject.org/).
