@@ -1,0 +1,541 @@
+
+#shb_custom {
+    margin-left:15px;
+    margin-top:5px;
+}
+
+
+#topAdThingy {
+    position:absolute;
+    top:20px;
+    left:10px;
+}
+
+
+#mainContent {
+    position:absolute;
+    top:60px;
+    left:10px;
+    right:0;
+    bottom:0;
+    iborder:1px solid blue;
+}
+
+#headerArea {
+
+    width:100%;
+    text-align: center;
+    font-size:125%;
+
+}
+
+#infoDiv {
+    text-align:center;
+    margin-left:200px;
+    margin-right:200px;
+
+    font-size:90%;
+}
+
+.htmlArea {
+    position:absolute;
+}
+
+#webpageImagesArea {
+    width:100%;
+    height:100%;
+    position:absolute;
+    margin-top:5px;
+    z-index:-1;
+}
+  #graphArea{
+      width:100%;
+      height:100%;
+      position:relative;
+      margin-top:5px;
+}
+
+#svgArea {
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+#header {
+    font-weight:bold;
+}
+#copyright {
+    text-align: center;
+    position:absolute;
+    right:15px;
+    top:5px;
+    font-size:100%;
+}
+#copyright a {
+    font-style:italic;
+}
+
+/* d3 stuff */
+.link {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1px;
+    opacity:0.7;
+}
+
+.linkFromTaxCourt {
+    fill: none;
+    stroke: #111;
+    stroke-width: 2px;
+    opacity:0.001;
+}
+
+.linkToBAP {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1px;
+    opacity:0.7;
+}
+
+.lightlink {
+    fill: none;
+    stroke: #777;
+    stroke-width: 1px;
+    opacity:0.7;
+}
+
+.linkMouseOver {
+    stroke-width: 4px;
+}
+.linkMouseOver {
+    stroke-width: 4px;
+}
+
+.border {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #aaa;
+}
+
+.node {
+    stroke: #555;
+    fill:#555;
+    opacity:0.75;
+}
+.isBAP {
+    stroke:green;
+    fill:green;
+}
+.isBankruptcyCourt {
+    stroke:green;
+    fill:#ccffcc;
+}
+
+.multiplePanelNote {
+    ifont-size:80%;
+    font-style:italic;
+}
+
+.weHaveBAP {
+    stroke-dasharray:"5 5";
+    fill:none;
+}
+/*.node:hover {*/
+    /*stroke:red;*/
+    /*opacity:1;*/
+/*}*/
+
+.districtCourtImageNode, .stateCourtImageNode {
+    position:absolute;
+    background:#fff;
+    border-radius:2px;
+    z-index:3000;
+    opacity:1;
+    iborder:1px solid blue;
+}
+
+.rareSourcesCourtDisplayInfo.hasQtip:hover,
+    .writCertioriBox.hasQtip:hover, .scotusNameDiv.hasQtip:hover,
+    .absDiv.hasQtip:hover  {
+    border:1px solid #888888;
+    z-index:3000;
+}
+
+.ui-tooltip, .qtip {
+    imax-width: 700px !important;
+    max-width: 760px !important;
+}
+
+.qtip-content, .ui-tooltip-content  {
+    opacity:0.9 !important;
+}
+
+.showCasesTable td {
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    font-size:10px !important;
+}
+.casePadLeft {
+    padding-left:5px !important;
+}
+
+/*.dataTables_scroll*/
+/*{*/
+    /*overflow:auto;*/
+/*}*/
+
+.showCasesTable tr.even td {
+    ibackground:#F1D031;
+    background:#eeeecc !important;
+}
+
+.dataTables_scrollHead {
+    idisplay:none !important;
+}
+
+.stateCourtLabelNode {
+    background:#fff;
+    font-size:8px;
+    font-weight:bold;
+    border:1px solid #dddddd;
+    border-radius:2px;
+    padding:0;
+    margin:0;
+}
+
+.stateCourtLabelNode:hover {
+    border:1px solid #66ff66;
+    background:#ddffdd;
+}
+
+path.domain {
+    stroke-width: 2px;
+    shape-rendering: crispEdges;
+}
+
+.shortNameDiv {
+    position:absolute;
+    z-index:1000;
+    font-size:10px;
+    font-weight:bold;
+    text-align: center;
+    color:black;
+    background:#fefefe;
+    iopacity:0.8;
+    opacity:1;
+    border-radius:5px;
+    border:1px solid #ccccdc;
+}
+
+.absDiv {
+    position:absolute;
+    z-index:1000;
+    font-size:10px;
+    font-weight:bold;
+    /*font-weight:200;*/
+    text-align: center;
+    color:black;
+    background:none;
+    opacity:1;
+    border-radius:4px;
+    iborder-radius:2px;
+    iborder:1px solid #ccccdc;
+    itext-shadow: 1px 1px #555;
+}
+
+
+.absDiv img {
+    display:block;
+    margin:auto;
+}
+
+.taxCourt, .rareSourcesCourtDisplayInfo {
+    position:absolute;
+    z-index:1000;
+    font-size:10px;
+    text-align: center;
+    color:black;
+    background:#fefefe;
+    border-radius:5px;
+    border:1px solid #ccccdc;
+}
+
+
+.showCourtShortName {
+    margin:auto;
+    z-index:1000;
+    font-size:10px;
+    font-weight:bold;
+    text-align: center;
+    color:black;
+    background:#fefefe;
+    opacity:1;
+    border-radius:5px;
+    border:1px solid #ccccdc;
+    imargin-bottom:2px;
+}
+.scotusNameDiv {
+    position:absolute;
+    font-size:14px;
+    font-weight:bold;
+    text-align: center;
+    color:black;
+    background:#fefefe;
+    opacity:1;
+    border-radius:5px;
+    border:1px solid #ccccdc;
+    padding-left:4px;
+    padding-right:4px;
+}
+.scotusNameDiv > img {
+    float:right;
+}
+
+.sideTitle {
+    position:absolute;
+    font-size:10px;
+    font-weight:bold;
+    text-align: center;
+    color:black;
+    background:#fefefe;
+}
+
+.appealsFederalCircuitTitle {
+    position:absolute;
+    font-size:14px;
+    font-weight:bold;
+    text-align: center;
+    color:black;
+    padding-left:4px;
+    padding-right:4px;
+    background:#fefefe;
+    opacity:1;
+    border-radius:5px;
+    border:1px solid #ccccff;
+}
+
+.infoAppealsFederalCircuitTitle {
+    position:absolute;
+    font-size:12px;
+    font-style:italic;
+    text-align: center;
+    color:black;
+    width:400px;
+    background:#fefefe;
+}
+
+.federalCircuitAppeals {
+    fill: none;
+    stroke: #777;
+    stroke-width: 0.5px;
+    opacity:0.5;
+}
+
+.federalCircuitAppealsEndLine, .scotusAppealsEndLine {
+    fill: none;
+    stroke: #555;
+    stroke-width: 1.5px;
+    opacity:1;
+}
+
+.bold {
+    font-weight:bold;
+}
+.middle {
+    vertical-align: middle;
+}
+.right {
+    text-align:right;
+}
+.center {
+    text-align:center;
+}
+
+tr.underline > td > div {
+    border-bottom:#000 !important;
+    padding-bottom:3px;
+}
+
+.courtInfoTable>tbody>tr:not(:last-child)>td {
+    padding-left:4px;
+    iborder-bottom:1px solid #FFEF93;
+    border-bottom:1px solid #ccbc93;
+}
+/*.courtInfoTable>tbody>tr:first-child td {*/
+    /*border-top:1px solid #ccbc93;*/
+/*}*/
+
+.stateSupremeCourt {
+    stroke:blue;
+    fill:blue;
+}
+
+.writCertioriBox {
+    position:absolute;
+    border:1px solid #ccccdc;
+    border-radius:2px;
+    z-index:2000;
+    font-size:10px;
+    background:#fff;
+    text-align: center;
+    ifont-style:italic;
+    vertical-align: middle;
+    padding:3px;
+}
+.writCertioriBox a {
+    font-weight: bold;
+}
+
+.boxForMainCourtType {
+    font-size:14px;
+    font-weight: bold;
+}
+
+.whiteBackground {
+    background:#ffffff;
+    border:1px solid #333;
+    border-radius:1px;
+ }
+
+.linkToFedAppeals:hover {
+    stroke-width:2;
+}
+
+table.popupTitle td {
+    ivertical-align: middle;
+}
+
+img.popupTitle {
+    float:left;
+    margin-right:5px;
+}
+table.popupTitle .popupTitleText {
+    margin-top:10px;
+}
+
+.party_r {
+    fill:#ff3333;
+    iopacity:0.9;
+}
+.party_d {
+    fill:blue;
+    iopacity:0.9;
+}
+
+table.judgesInfo td {
+    border:1px solid #444;
+    text-align: center;
+}
+
+.judgeHangIndent {
+    padding-left:5px;
+    text-indent:-5px;
+}
+
+#playbackArea {
+    position:absolute;
+    opacity:0;
+    z-index:5001;
+    font-size:10px;
+    width:100%;
+}
+#doPlayback {
+    float:right;
+    opacity:0;
+    right:5px;
+    z-index:5001;
+    font-size:10px;
+}
+#doPlaybackCurrentCourt {
+    float:left;
+    opacity:0;
+    left:5px;
+    z-index:5001;
+    font-size:10px;
+}
+#currentModeledPeriod {
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight:bold;
+    font-size:16px;
+}
+
+#whereInPlaybackWeAre {
+    position:absolute;
+    font-weight:bold;
+    /* didn't help - spaces were different sized...  font-family:'Courier';*/
+    font-size:10px;
+    margin-left:auto;
+    margin-right:auto;
+    bottom:0;
+    opacity:0;
+}
+
+/*#doPlayback {*/
+    /*margin-right:10px;*/
+/*}*/
+#stopPlayback {
+    opacity:0;
+}
+
+.isScotusPage {
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+#options {
+    position:absolute;
+    left:5px;
+    top:5px;
+    font-size:75%;
+}
+#options table td {
+    padding-left:4px;
+}
+#opinionsTodayInfo {
+    opacity:0;
+}
+
+.hasCourtListenerCases {
+    stroke: red;
+    stroke-width: 2px;
+}
+
+#btnMissingScraperInfo, #btnShowPages, #chkInteractWithCourtListener {
+    font-size:10px;
+    z-index:11000;
+}
+
+#btnMissingScraperInfo {
+    display:none;
+}
+
+.missingScraper {
+
+stroke:#000;
+fill:#FF0000;
+stroke-width:1px;
+
+background:#FF0000;
+border: 1px solid #000;
+
+
+}
+
+.courtPageDiv {
+    width:100%;
+    border-top:1px solid black;
+    iborder-bottom:2px solid black;
+    padding-bottom:10px;
+    font-size:80%;
+}
+
+.courtPageTitle {
+    ifont-weight:bold;
+    iborder-bottom:1px solid blue;
+}
+
+.ui-datepicker {
+    z-index:210000 !important;
+}
