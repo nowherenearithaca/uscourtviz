@@ -1,4 +1,4 @@
-uscourtviz
+Exploring the US Judicial System - a Visualization
 ==========
 
 This is a work-in-progress html/js visualization of the US Judicial System.
