@@ -11,7 +11,8 @@ The plan is to eventually incorporate this visualization into the
 
 ## Viewing the Visualization
 
-To view this standalone version, simply clone the repository and open the file index.html with a
+To view this standalone version, simply clone the repository to your machine and then 
+open the file index.html with a
 browser that supports svg.  This includes Chrome, IE9+, Safari, Firefox, and Opera.
 
 ## Interacting with CourtListener
