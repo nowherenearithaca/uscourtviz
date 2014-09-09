@@ -5436,6 +5436,8 @@ var CourtVisualization = function(config) {
         //jQuery('.dataTable').wrap('<div class="dataTables_scroll" />');
     }
 
+    //TODO - do people really contribute to election fund thing?  apparently...
+
     function getSmallObjectArrayAndMakeDataTable(arr, selector) {
 
         var test = arr.map(function(scCase) {
