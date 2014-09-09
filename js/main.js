@@ -84,6 +84,7 @@ $(document).ready(function() {
 
     theViz = new CourtVisualization(config);
 
+    $('#loadingDiv').fadeOut();
     //theViz.showWebPages();
 
 
