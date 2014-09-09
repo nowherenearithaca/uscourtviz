@@ -25,4 +25,4 @@ this version can interact with the CourtListener api via jsonp to
 gather info on the number of cases for each court back to a certain date.  While this
 is throttled by CourtListener to only about 20 hits per court, it can still give
 some idea of the activity across the courts (that CourtListener has scrapers for), and
-provides a relatively easy way to go see the specific cases for the relevant courts.
+provides a relatively easy way to go see the specific cases for the relevant courts.  
