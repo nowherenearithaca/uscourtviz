@@ -14,9 +14,13 @@ The plan is to eventually incorporate this visualization into the
 
 It is currently hosted [on google drive here](https://d57dd304fefca1aa423fea1b4dc59f23c06dd95e.googledrive.com/host/0B2GQktu-wcTiWm82NGt5MTZreHM/).
 
-To view this standalone version locally, simply clone the repository to your machine and then 
-open the file index.html with a
-browser that supports svg.  This includes Chrome, IE9+, Safari, Firefox, and Opera.
+To view this standalone version locally:
+
+* make sure you have [node](http://www.nodejs.org) installed
+* clone the repository to your machine 
+* run npm update
+* run `grunt` from the commandline to build the consolidated minified javascript file 
+* open the file index.html with a browser that supports svg (This includes Chrome, IE9+, Safari, Firefox, and Opera)
 
 ## Interacting with CourtListener
 
