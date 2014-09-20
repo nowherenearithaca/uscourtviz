@@ -27,13 +27,28 @@ module.exports = function(grunt) {
             tasks: ['jshint']
         },
         cssmin: {
-            files:[{
-                        expand:true,
-                        cwd:'src/',
-                        src:['*.css'],
-                        dest: 'dist/',
-                        ext:'min.css'
-                    }]
+            combine: {
+                files: {
+                    'dist/uscourtviz.min.css': [
+                                'css/sharebar.css',
+                                'css/normalize.css',
+                                'css/main.css',
+                                'css/jquery.qtip.min.css',
+                                'css/courts.css',
+                                'css/seals_thumbs.css',
+                                'js/vendor/jquery-ui-1.11.0.custom/jquery-ui.css',
+                                'js/vendor/media/css/jquery.dataTables.css'
+                    ]},
+                ignorefiles: [
+                    {
+                        expand: true,
+                        cwd: 'css',
+                        src: ['*.css'],
+                        dest: 'dist',
+                        ext: '.min.css'
+                    }
+                ]
+            }
         },
         concat: {
             options: {
@@ -92,6 +107,6 @@ module.exports = function(grunt) {
 
     //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
     //grunt.registerTask('default', ['cssmin', 'concat', 'uglify']);
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['cssmin', 'concat', 'uglify']);
 
 };
