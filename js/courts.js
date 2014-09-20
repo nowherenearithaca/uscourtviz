@@ -1055,6 +1055,43 @@ var CourtVisualization = function(config) {
 
     //setUpChart(supremeCourt, "#graphArea", stateHighestCourtsAfterParse); //pass it down
 
+
+    that.reRenderAfterResize = function rerenderAfterResize() {
+
+        //return;
+
+        //main axes don't scale well by default - reset the domain thing?
+
+        //there's a lot of stuff to be careful about this
+        //I can't just remove existing stuff and redraw, as there is
+        //state stuff to keep up with, possibly
+        console.log("reRenderAfterResize");
+
+        //$progressBarText.html("Rendering...").fadeIn();
+        showProgressBar("Rendering");
+        //$('#loadingDiv').show();
+
+        //delete everything
+        d3.select('#svgArea').selectAll('*').remove();
+
+        //then redraw it
+        setUpChart(supremeCourt, "#svgArea", stateHighestCourtsAfterParse); //pass it down
+
+        hideProgressBar();
+        //$('#loadingDiv').stop().fadeOut();
+        //$progressBarText.stop().fadeOut();
+
+    }
+
+    function showProgressBar() {
+        $('#loadingDiv').animate({"opacity":1});
+    }
+    function hideProgressBar() {
+        $('#loadingDiv').animate({"opacity":0});
+    }
+
+    //this is called the first time we run through this
+
     setUpChart(supremeCourt, "#svgArea", stateHighestCourtsAfterParse); //pass it down
 
 
@@ -3100,7 +3137,11 @@ var CourtVisualization = function(config) {
 
         var orientationRightToLeft = {size: [heightOfAreaForSideBoxes, rareSourcesWidth],
             y: function(d,i) {
-                if (isUndefined(d.shiftedY)) {
+                //if (isUndefined(d.shiftedY)) { // this causes problems when we are redrawing due to window size change
+                                                // we need to reset it - I think I was doing this for
+                                                // (unverified) performance reasons
+                if (true) {
+                            //
                     if (d.depth <= -1) {
                         //console.log("dx = " + d.x);
                         d.shiftedY = scotusY; //scotusY - height/8 - d.x; //heightOfArea/2;// - d.x; // heightOfArea/2; // scotusY- height/4 - d.x; //(rareSourcesHeight / 2 - d.x);

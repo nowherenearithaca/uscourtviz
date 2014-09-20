@@ -23,6 +23,27 @@ var spinner = new Spinner(opts);
 
 var theViz;
 
+// David Walsh's thing
+// http://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        }, wait);
+        if (immediate && !timeout) func.apply(context, args);
+    };
+};
+
+var debouncedResize = debounce(function () {
+        theViz.reRenderAfterResize();
+    },
+    250);
+
+
 $(document).ready(function() {
 
 //    SHB.build({
@@ -44,6 +65,7 @@ $(document).ready(function() {
         new FastClick(document.body);
     }, false);
 
+    window.addEventListener('resize', debouncedResize);
 
     $('#doPlayback').button().click(function(event) {
         theViz.analyzePeriod({begin_mm_dd_yy:'01/01/2002'}); //it only goes up to about the first half of 2013 at the moment
@@ -84,7 +106,7 @@ $(document).ready(function() {
 
     theViz = new CourtVisualization(config);
 
-    $('#loadingDiv').fadeOut();
+    $('#loadingDiv').animate({"opacity":0});
     //theViz.showWebPages();
 
 
