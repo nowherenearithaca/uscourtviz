@@ -43,6 +43,17 @@ var debouncedResize = debounce(function () {
     },
     250);
 
+function showProgressBar() {
+    $('#loadingDiv').animate({"opacity":1}, function() {
+        $(this).css("z-index","100000");
+    });
+}
+function hideProgressBar() {
+    $('#loadingDiv').animate({"opacity":0}, function() {
+        $(this).css("z-index","-100000");
+    });
+}
+
 
 $(document).ready(function() {
 
@@ -100,13 +111,16 @@ $(document).ready(function() {
     var headerBottom = $('#copyright').position().top + $('#copyright').height();
     $('#mainContent').css('top', (headerBottom + 5) + "px");
 
-    var config={datepicker:datepicker};
+    var config={datepicker:datepicker,
+                showProgressBar: showProgressBar,
+                hideProgressBar: hideProgressBar};
 
     //config.tableSelector = "#theDataTable";
 
     theViz = new CourtVisualization(config);
 
-    $('#loadingDiv').animate({"opacity":0});
+    hideProgressBar();
+    //$('#loadingDiv').animate({"opacity":0});
     //theViz.showWebPages();
 
 

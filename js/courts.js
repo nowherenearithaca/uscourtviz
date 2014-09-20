@@ -1068,7 +1068,7 @@ var CourtVisualization = function(config) {
         console.log("reRenderAfterResize");
 
         //$progressBarText.html("Rendering...").fadeIn();
-        showProgressBar("Rendering");
+        config.showProgressBar("Rendering");
         //$('#loadingDiv').show();
 
         //delete everything
@@ -1077,18 +1077,12 @@ var CourtVisualization = function(config) {
         //then redraw it
         setUpChart(supremeCourt, "#svgArea", stateHighestCourtsAfterParse); //pass it down
 
-        hideProgressBar();
+        config.hideProgressBar();
         //$('#loadingDiv').stop().fadeOut();
         //$progressBarText.stop().fadeOut();
 
     }
 
-    function showProgressBar() {
-        $('#loadingDiv').animate({"opacity":1});
-    }
-    function hideProgressBar() {
-        $('#loadingDiv').animate({"opacity":0});
-    }
 
     //this is called the first time we run through this
 
@@ -4080,8 +4074,8 @@ var CourtVisualization = function(config) {
 
         }
     }
-    console.log("Number courts: " + numberCourts);
-    console.log(s);
+    //onsole.log("Number courts: " + numberCourts);
+    //onsole.log(s);
 
     //console.log(that.courtListenerShortNames);
     that.courtListenerShortNames = shuffleArray(that.courtListenerShortNames);
