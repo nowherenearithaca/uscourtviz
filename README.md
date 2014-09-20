@@ -20,7 +20,7 @@ To view this standalone version locally:
 * clone the repository to your machine 
 * run npm update
 * run `grunt` from the commandline to build the consolidated minified javascript file 
-* open the file index.html with a browser that supports svg (This includes Chrome, IE9+, Safari, Firefox, and Opera)
+* open the file index.html with a browser that supports svg (this includes Chrome, IE9+, Safari, Firefox, and Opera)
 
 ## Interacting with CourtListener
 
