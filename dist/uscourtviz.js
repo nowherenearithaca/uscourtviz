@@ -34333,7 +34333,7 @@ var CourtVisualization = function(config) {
                 })
                 .html(function(d) {
                     return "<a href='" + d.courtListenerCourt.url + "' target='_blank'>" +
-                        "<img style='height:" + imageHeight + "'px;overflow:hide;' src='js/courtpages_100/" + getFilenameForCourtPageImage(d.courtListenerCourt) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
+                        "<img style='height:" + imageHeight + "'px;overflow:hide;' src='img/courtpages_100/" + getFilenameForCourtPageImage(d.courtListenerCourt) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
                         "</a>";
                 });
 
@@ -34396,13 +34396,13 @@ var CourtVisualization = function(config) {
                     if (d.citation===supremeCourt.citation) {
                         return "<a href='" + url.trim() + "' target='_blank'>" +
                             //"<img style='height:100px;overflow:hide;' src='js/courtpages_100/" + getFilenameForCourtPageImage(d.courtListenerCourt) + "' width='50' height='50'>" +
-                            "<img src='js/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='250'>" +
+                            "<img src='img/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='250'>" +
                             "</a>";
                     }
                     else {
                         return "<a href='" + url.trim() + "' target='_blank'>" +
                             //"<img style='height:100px;overflow:hide;' src='js/courtpages_100/" + getFilenameForCourtPageImage(d.courtListenerCourt) + "' width='50' height='50'>" +
-                            "<img style='height:" + imageHeight + "'px;overflow:none;' src='js/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
+                            "<img style='height:" + imageHeight + "'px;overflow:none;' src='img/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
                             "</a>";
                     }
                 });
@@ -34445,7 +34445,7 @@ var CourtVisualization = function(config) {
 
                     return "<a href='" + url.trim() + "' target='_blank'>" +
                         //"<img style='height:100px;overflow:hide;' src='js/courtpages_100/" + getFilenameForCourtPageImage(d.courtListenerCourt) + "' width='50' height='50'>" +
-                        "<img style='height:height:" + imageHeight + "'px;overflow:hide;' src='js/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
+                        "<img style='height:height:" + imageHeight + "'px;overflow:hide;' src='img/courtpages_100/" + getFilenameForCourtPageImage(court) + "' width='" + imageWidth + "' height='" + imageWidth + "'>" +
                         "</a>";
                 });
 
