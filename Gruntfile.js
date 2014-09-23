@@ -69,7 +69,7 @@ module.exports = function(grunt) {
                         'js/vendor/d3.js',
                         'js/vendor/jquery.qtip.min.js',
                         'js/vendor/moment.js',
-                        'js/callCourtListenerData.js',
+                        'js/callCourtListener.js',
                         'js/myutils.js',
                         'js/districtCourts.js',
                         'js/judges.js',
