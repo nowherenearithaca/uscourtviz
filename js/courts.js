@@ -4004,6 +4004,8 @@ var CourtVisualization = function(config) {
 
     var numberCourts=0;
     that.courtsByCourtListenerAbbreviation = {};
+    that.courtsByCitation = courtsByCitation;
+
     that.courtListenerShortNames = []; //for randomizing calling it
         for (var citation in courtsByCitation) {
 
@@ -5909,6 +5911,156 @@ var CourtVisualization = function(config) {
     };
 
 
+    that.getSummaryOfDescriptiveTextHtml = function() {
+
+        var descriptions = that.getObjectDescriptiveTextArray();
+
+        var s = "<table>";
+
+        descriptions.forEach(function(d) {
+            s += "<tr><td>" + d.name + "</td><td>" + d.description + "</td></tr>";
+        });
+
+        s += "</table>";
+
+        return s;
+
+    };
+
+    that.getSummaryOfDescriptiveText = function() {
+
+        var descriptions = that.getObjectDescriptiveTextArray();
+
+        var s = "";
+
+        descriptions.forEach(function(d) {
+            s += d.name + " : " + d.description + "\n";
+        });
+        
+        return s;
+
+    };
+
+    that.getObjectDescriptiveTextArray = function() {
+
+        var descriptions = [];
+
+        descriptions.push({name:"citation", description:"This is the key for the court in internal hashtables; some of these are made up because I did not know what to use."});
+        descriptions.push({name:"name", description:"Name for the court"});
+        descriptions.push({name:"shortName", description:"'Short' name for the court"});
+
+        descriptions.push({name:"courtListenerCourt", description:"structure with some additional info; "});
+        descriptions.push({name:"courtListenerCourt.extraThings.judgesPic.url", description:"filename for the picture of the judges"});
+        descriptions.push({name:"courtListenerCourt.extraThings.judgesPic.urlSource", description:"source for the picture of the judges"});
+
+        descriptions.push({name:"parent", description:"Citation for the parent court of the court (if any); note that there are some 'fake' parents for display purposes in the viz; in particular, the top 'court' for the state supreme courts has citation 'statesWritBox'"});
+        descriptions.push({name:"multipleParents", description:"(Primarily for bankruptcy courts); If the court can send cases up more than one way, this is array of the different parent citations"});
+        descriptions.push({name:"children", description:"Array of the citation keys for the children courts for the court (if any)"});
+
+        descriptions.push({name:"courtListenerName", description:"Name according to CourtListener (?)"});
+        descriptions.push({name:"courtListenerAbbreviation", description:"abbreviation that CourtListener uses"});
+        descriptions.push({name:"courtListenerURL", description:"URL to see results for the court"});
+
+        descriptions.push({name:"jurisdiction", description:"Jurisdiction; can be 'Federal Appellate', 'Federal Bankruptcy', 'Federal District', 'Federal Special', 'State Appellate', 'State Special'"});
+
+        descriptions.push({name:"isDistrictBankruptcyCourt", description:"Whether it is a bankruptcy court or not (true/false/null)"});
+
+        descriptions.push({name:"scdbId", description:"ID of the court in the Supreme Court database"});
+
+
+        descriptions.push({name:"myDistrictCourt", description:"Object with more details on the court, if a district court"});
+
+        descriptions.push({name:"isStateCourt", description:"Whether it is a state court or not (true/false/null)"});
+        descriptions.push({name:"state", description:"If state court, this is the full name of the state"});
+        descriptions.push({name:"stateAbbrev", description:"If state court, this is two-character abbreviation for the state"});
+        descriptions.push({name:"judgeTermLength", description:"If not null, the length of the term for the judges"});
+        descriptions.push({name:"numberJudges", description:"If not null, how many judges are on the court"});
+
+        descriptions.push({name:"meetingPlaces", description:"If not null, how many different places the court can meet"});
+
+        descriptions.push({name:"established", description:"If not null, when the court was established"});
+        descriptions.push({name:"chiefJudge", description:"If not null, current Chief Justice for the court"});
+        descriptions.push({name:"chiefJudgeUrl", description:"If not null, wikipedia page for current Chief Justice for the court"});
+
+        descriptions.push({name:"courtListenerCourt.jurisdiction", description:"Should be same as jurisdiction, I imagine"});
+
+
+        //descriptions.push({name:"courtListenerCourt.extraThings.judgesPic.url", description:"filename for the picture of the judges"});
+        //descriptions.push({name:"courtListenerCourt.extraThings.judgesPic.urlSource", description:"source for the picture of the judges"});
+
+
+        descriptions.push({name:"seal", description:"filename for the court seal image"});
+        descriptions.push({name:"sealSource", description:"where the seal image file was retrieved from"});
+
+        descriptions.push({name:"url", description:"Web site for the court"});
+        descriptions.push({name:"wikiUrl", description:"Wikimedia site for the court"});
+
+
+
+
+        descriptions.push({name:"abbrev", description:"Abbreviation for the court"});
+
+
+        descriptions.sort(function(a,b) {if (a.name < b.name) {return -1} else {return 1;}}   );
+
+        return descriptions;
+
+    };
+
+    that.getStructureForExport = function() {
+
+        var arr = theViz.getAllCourtsInArray();
+
+        arr.forEach(function(arrEntry) { if (arrEntry.children) {
+                                                arrEntry.children = 
+                                                    arrEntry.children.map(function(child) {return child.citation;});
+                                    }});
+
+        arr.forEach(function(arrEntry) { 
+                                        //arrEntry.parent = (arrEntry.parent ? arrEntry.parent.citation : null);
+                                        arrEntry.parent = (arrEntry.parent ? arrEntry.parent.citation : null);
+                                    });
+
+        arr.forEach(function(arrEntry) { 
+                        if (arrEntry.multipleParents) {
+                                arrEntry.multipleParents = arrEntry.multipleParents.map(
+                                                                    function(child) {
+                                                                            return child.citation;
+                                                                                    });
+                            }
+                        });
+
+
+        // arr.forEach(function(arrEntry) { 
+        //                 if (arrEntry.courtListenerCourt && arrEntry.courtListenerCourt.extraThings) {
+        //                             arrEntry.courtListenerCourt.extraThings.judgesPic = null;}
+        //                         });
+
+        arr.forEach(function(arrEntry) { 
+                                        if (arrEntry.courtListenerCourt) {arrEntry.courtListenerCourt.courtListenerCourt = null};                                        
+                                    });
+
+
+        arr.forEach(function(arrEntry) { if (arrEntry.courtListenerCourt) {
+                                                arrEntry.courtListenerCourt.populationInfo = null;}
+                                            });
+
+        //arr.forEach(function(arrEntry) { if (arrEntry.courtListenerCourt) {
+        //                                        arrEntry.courtListenerCourt.courtListenerCourt = null;
+        //                                }});
+
+        // arr.forEach(function(arrEntry) { if (arrEntry.courtListenerCourt) {arrEntry.courtListenerCourt.extraThings = null;}
+        //                             });
+
+        var citationsSeen = arr.map(function(c) { return c.citation;});
+
+
+        return arr;
+
+    };
+
+
+
     that.showPages = function() {
 
         var theCourts = that.getAllCourtsInArray();
@@ -5966,3 +6118,36 @@ var CourtVisualization = function(config) {
 //    that.setTimerForNextCallToGetCourtListenerData(1); //just fire it off for now for initial testing...
 
 };
+
+
+
+
+
+function isCyclic (obj) {
+  var seenObjects = [];
+
+  function detect (obj) {
+    if (obj && typeof obj === 'object') {
+      if (seenObjects.indexOf(obj) !== -1) {
+        return true;
+      }
+      seenObjects.push(obj);
+      //onsole.log(seenObjects.length - 1);
+      //onsole.log(obj)
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key) && detect(obj[key])) {
+
+          console.log(seenObjects.indexOf(obj[key]) );  
+          console.log(obj[key]);  
+
+          console.log(obj, 'cycle at ' + key);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  return detect(obj);
+}
+
